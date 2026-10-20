@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grownics by Bloova</title>
+<meta name="description" content="Paste your social media link and get a full diagnosis, the problems holding your account back, and a 30 day growth plan. By Bloova.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="https://bloova.org" aria-label="Bloova"><img src="bloova-logo.png" alt="Bloova" width="120" height="34"></a>
+    <a class="back" href="https://bloova.org">Back to bloova.org</a>
+  </div>
+</header>
+
+<main id="app" class="wrap">
+
+  <section id="intake" class="view">
+    <div class="intro">
+      <h1>Grownics by Bloova</h1>
+      <p class="lede">Paste your social media link and tell us a little about the account. You get a clear diagnosis, the problems holding it back, and a 30 day plan to fix them.</p>
+    </div>
+
+    <form id="form" novalidate>
+      <div class="field big">
+        <label for="url">Your account link</label>
+        <input id="url" name="url" type="text" inputmode="url" autocomplete="off" placeholder="https://www.instagram.com/yourhandle" required>
+        <p class="hint" id="platform">Works with Instagram, TikTok, X, Facebook, LinkedIn, YouTube and Threads.</p>
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="followers">Followers</label>
+          <input id="followers" name="followers" type="number" min="0" inputmode="numeric" placeholder="e.g. 2400" required>
+        </div>
+        <div class="field">
+          <label for="frequency">How often you post</label>
+          <select id="frequency" name="frequency" required>
+            <option value="">Choose one</option>
+            <option>Almost never</option>
+            <option>Less than once a week</option>
+            <option>1 to 2 times a week</option>
+            <option>3 to 5 times a week</option>
+            <option>Daily</option>
+            <option>More than once a day</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="typical">Typical views or likes per post</label>
+          <input id="typical" name="typical" type="number" min="0" inputmode="numeric" placeholder="Optional">
+        </div>
+        <div class="field">
+          <label for="goal">Your main goal</label>
+          <select id="goal" name="goal" required>
+            <option value="">Choose one</option>
+            <option>Grow followers</option>
+            <option>Get more customers or leads</option>
+            <option>Build brand awareness</option>
+            <option>Build a community</option>
+            <option>Become a known voice in my field</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset class="field">
+        <legend>What do you post?</legend>
+        <div class="checks">
+          <label><input type="checkbox" name="formats" value="Short videos or reels"> Short videos or reels</label>
+          <label><input type="checkbox" name="formats" value="Photos"> Photos</label>
+          <label><input type="checkbox" name="formats" value="Carousels"> Carousels</label>
+          <label><input type="checkbox" name="formats" value="Stories"> Stories</label>
+          <label><input type="checkbox" name="formats" value="Text posts"> Text posts</label>
+          <label><input type="checkbox" name="formats" value="Live videos"> Live videos</label>
+        </div>
+      </fieldset>
+
+      <div class="grid one">
+        <div class="field">
+          <label for="niche">What is the account about?</label>
+          <input id="niche" name="niche" type="text" maxlength="120" placeholder="e.g. Real estate in Lagos, skincare, a tech newsletter" required>
+        </div>
+        <div class="field">
+          <label for="audience">Who do you want to reach?</label>
+          <input id="audience" name="audience" type="text" maxlength="200" placeholder="Optional. e.g. First time home buyers aged 25 to 40">
+        </div>
+        <div class="field">
+          <label for="bio">Your bio, as it is written now</label>
+          <textarea id="bio" name="bio" maxlength="400" rows="3" placeholder="Copy and paste it here"></textarea>
+        </div>
+        <div class="field">
+          <label for="captions">Two or three recent captions</label>
+          <textarea id="captions" name="captions" maxlength="900" rows="3" placeholder="Optional, but it makes the audit sharper"></textarea>
+        </div>
+        <div class="field">
+          <label for="struggle">What is your biggest struggle right now?</label>
+          <textarea id="struggle" name="struggle" maxlength="400" rows="2" placeholder="Optional"></textarea>
+        </div>
+      </div>
+
+      <p class="error" id="error" role="alert" hidden></p>
+      <div class="actions">
+        <button class="btn solid" type="submit" id="go">Run my audit</button>
+        <p class="hint">Takes about 30 seconds. We do not log in to your account or ask for a password.</p>
+      </div>
+    </form>
+  </section>
+
+  <section id="loading" class="view" hidden>
+    <div class="intro">
+      <h1>Reading your account details</h1>
+      <p class="lede" id="stage">Checking your profile and positioning</p>
+      <div class="bar-track"><i id="progress"></i></div>
+    </div>
+  </section>
+
+  <section id="report" class="view" hidden></section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> Bloova. Grownics by Bloova.</span>
+    <span>The audit is based on the details you provide. It is guidance, not a guarantee.</span>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
