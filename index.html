@@ -3,134 +3,290 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grownics by Bloova</title>
-<meta name="description" content="Paste your social media link and get a full diagnosis, the problems holding your account back, and a 30 day growth plan. By Bloova.">
+<title>Bloova | Creative growth studio and media brand</title>
+<meta name="description" content="Bloova is a creative growth studio and media brand in Lagos, Nigeria. We build brands that grow through strategy, creativity and technology.">
 <meta name="theme-color" content="#000000">
+<meta property="og:title" content="Bloova | Creative growth studio and media brand">
+<meta property="og:description" content="Bloova is a creative growth studio and media brand in Lagos, Nigeria. We build brands that grow through strategy, creativity and technology.">
+<meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="app.css">
+<script>document.documentElement.classList.add('js');try{if(!sessionStorage.getItem('bloovaSplash')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('splash-on','hold');setTimeout(function(){document.documentElement.classList.remove('splash-on','hold')},9000)}}catch(e){}</script>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="top">
-  <div class="wrap bar">
-    <a class="brand" href="https://bloova.org" aria-label="Bloova"><img src="bloova-logo.png" alt="Bloova" width="120" height="34"></a>
-    <a class="back" href="https://bloova.org">Back to bloova.org</a>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="splash" id="splash" role="dialog" aria-label="Welcome to Bloova">
+  <svg class="sp-rings" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+    <circle style="--i:0" cx="200" cy="200" r="40" pathLength="1"/>
+    <circle style="--i:1" cx="200" cy="200" r="78" pathLength="1"/>
+    <circle style="--i:2" cx="200" cy="200" r="116" pathLength="1"/>
+    <circle style="--i:3" cx="200" cy="200" r="152" pathLength="1"/>
+    <circle style="--i:4" cx="200" cy="200" r="186" pathLength="1"/>
+    <circle style="--i:5" cx="200" cy="200" r="198" pathLength="1"/>
+  </svg>
+  <div class="sp-core">
+    <img class="sp-logo" src="bloova-logo.png" alt="Bloova" width="780" height="221">
+    <span class="sp-rule"></span>
+    <p class="sp-line">A creative growth studio and media brand</p>
+    <p class="sp-line">Based in Lagos, Nigeria</p>
+    <div class="sp-words" aria-hidden="true"><span>Strategy</span><span>Creativity</span><span>Technology</span><span>Growth</span></div>
+  </div>
+  <div class="sp-curtain t"></div><div class="sp-curtain b"></div>
+  <div class="sp-foot"><span class="sp-count" id="sp-count">0</span><button class="sp-skip" type="button" id="sp-skip">Enter site</button></div>
+  <div class="sp-bar"></div>
+</div>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Bloova home"><img src="bloova-logo.png" alt="Bloova" width="140" height="40"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="ecosystem.html">Ecosystem</a>
+      <a href="work.html">Work</a>
+      <a href="team.html">Core team</a>
+      <a class="btn btn-line btn-sm" href="contact.html">Contact</a>
+    </nav>
   </div>
 </header>
-
-<main id="app" class="wrap">
-
-  <section id="intake" class="view">
-    <div class="intro">
-      <h1>Grownics by Bloova</h1>
-      <p class="lede">Paste your social media link and tell us a little about the account. You get a clear diagnosis, the problems holding it back, and a 30 day plan to fix them.</p>
-    </div>
-
-    <form id="form" novalidate>
-      <div class="field big">
-        <label for="url">Your account link</label>
-        <input id="url" name="url" type="text" inputmode="url" autocomplete="off" placeholder="https://www.instagram.com/yourhandle" required>
-        <p class="hint" id="platform">Works with Instagram, TikTok, X, Facebook, LinkedIn, YouTube and Threads.</p>
-      </div>
-
-      <div class="grid">
-        <div class="field">
-          <label for="followers">Followers</label>
-          <input id="followers" name="followers" type="number" min="0" inputmode="numeric" placeholder="e.g. 2400" required>
-        </div>
-        <div class="field">
-          <label for="frequency">How often you post</label>
-          <select id="frequency" name="frequency" required>
-            <option value="">Choose one</option>
-            <option>Almost never</option>
-            <option>Less than once a week</option>
-            <option>1 to 2 times a week</option>
-            <option>3 to 5 times a week</option>
-            <option>Daily</option>
-            <option>More than once a day</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="typical">Typical views or likes per post</label>
-          <input id="typical" name="typical" type="number" min="0" inputmode="numeric" placeholder="Optional">
-        </div>
-        <div class="field">
-          <label for="goal">Your main goal</label>
-          <select id="goal" name="goal" required>
-            <option value="">Choose one</option>
-            <option>Grow followers</option>
-            <option>Get more customers or leads</option>
-            <option>Build brand awareness</option>
-            <option>Build a community</option>
-            <option>Become a known voice in my field</option>
-          </select>
-        </div>
-      </div>
-
-      <fieldset class="field">
-        <legend>What do you post?</legend>
-        <div class="checks">
-          <label><input type="checkbox" name="formats" value="Short videos or reels"> Short videos or reels</label>
-          <label><input type="checkbox" name="formats" value="Photos"> Photos</label>
-          <label><input type="checkbox" name="formats" value="Carousels"> Carousels</label>
-          <label><input type="checkbox" name="formats" value="Stories"> Stories</label>
-          <label><input type="checkbox" name="formats" value="Text posts"> Text posts</label>
-          <label><input type="checkbox" name="formats" value="Live videos"> Live videos</label>
-        </div>
-      </fieldset>
-
-      <div class="grid one">
-        <div class="field">
-          <label for="niche">What is the account about?</label>
-          <input id="niche" name="niche" type="text" maxlength="120" placeholder="e.g. Real estate in Lagos, skincare, a tech newsletter" required>
-        </div>
-        <div class="field">
-          <label for="audience">Who do you want to reach?</label>
-          <input id="audience" name="audience" type="text" maxlength="200" placeholder="Optional. e.g. First time home buyers aged 25 to 40">
-        </div>
-        <div class="field">
-          <label for="bio">Your bio, as it is written now</label>
-          <textarea id="bio" name="bio" maxlength="400" rows="3" placeholder="Copy and paste it here"></textarea>
-        </div>
-        <div class="field">
-          <label for="captions">Two or three recent captions</label>
-          <textarea id="captions" name="captions" maxlength="900" rows="3" placeholder="Optional, but it makes the audit sharper"></textarea>
-        </div>
-        <div class="field">
-          <label for="struggle">What is your biggest struggle right now?</label>
-          <textarea id="struggle" name="struggle" maxlength="400" rows="2" placeholder="Optional"></textarea>
-        </div>
-      </div>
-
-      <p class="error" id="error" role="alert" hidden></p>
-      <div class="actions">
-        <button class="btn solid" type="submit" id="go">Run my audit</button>
-        <p class="hint">Takes about 30 seconds. We do not log in to your account or ask for a password.</p>
-      </div>
-    </form>
-  </section>
-
-  <section id="loading" class="view" hidden>
-    <div class="intro">
-      <h1>Reading your account details</h1>
-      <p class="lede" id="stage">Checking your profile and positioning</p>
-      <div class="bar-track"><i id="progress"></i></div>
-    </div>
-  </section>
-
-  <section id="report" class="view" hidden></section>
-
-</main>
-
-<footer class="foot">
+<main id="main">
+<section class="hero" id="hero">
+  <svg class="rings" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+    <circle class="ring" style="--i:0" cx="200" cy="200" r="52" pathLength="1"/>
+    <circle class="ring" style="--i:1" cx="200" cy="200" r="92" pathLength="1"/>
+    <circle class="ring" style="--i:2" cx="200" cy="200" r="132" pathLength="1"/>
+    <circle class="ring" style="--i:3" cx="200" cy="200" r="168" pathLength="1"/>
+    <circle class="ring" style="--i:4" cx="200" cy="200" r="198" pathLength="1"/>
+    <g class="orb" style="--s:36s"><circle class="sat" cx="368" cy="200" r="4.5" transform="rotate(40 200 200)"/></g>
+    <g class="orb rev" style="--s:58s"><circle class="sat" cx="332" cy="200" r="3.5" transform="rotate(200 200 200)"/></g>
+    <g class="orb" style="--s:84s"><circle class="sat" cx="398" cy="200" r="3" transform="rotate(300 200 200)"/></g>
+    <g class="orb rev" style="--s:28s"><circle class="sat" cx="292" cy="200" r="3" transform="rotate(120 200 200)"/></g>
+    <circle class="dot" cx="200" cy="200" r="6"/>
+  </svg>
   <div class="wrap">
-    <span>&copy; <span id="year">2026</span> Bloova. Grownics by Bloova.</span>
-    <span>The audit is based on the details you provide. It is guidance, not a guarantee.</span>
+    <div class="hero-inner">
+      <h1 class="rise" style="--d:.1">We build brands that grow through strategy, creativity and technology.</h1>
+      <p class="lede rise" style="--d:.3">Bloova is a creative growth studio and media brand. We help businesses, founders and brands build stronger identities, improve visibility and grow.</p>
+      <div class="hero-actions rise" style="--d:.5">
+        <a class="btn btn-solid" href="contact.html">Start a project</a>
+        <a class="btn btn-line" href="work.html">See our work</a>
+      </div>
+      <div class="hero-meta rise" style="--d:.7">
+        <span><b>Lagos, Nigeria</b>Working with brands across Africa and beyond</span>
+        <span><b>Ten brands</b>Across five industries</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker " aria-hidden="true"><div class="ticker-track"><span>Brand marketing</span><i></i><span>Digital and social media marketing</span><i></i><span>Content marketing</span><i></i><span>Performance marketing</span><i></i><span>SEO and brand visibility</span><i></i><span>Media and editorial coverage</span><i></i><span>Web and digital solutions</span><i></i><span>Tech</span><i></i><span>Brand marketing</span><i></i><span>Digital and social media marketing</span><i></i><span>Content marketing</span><i></i><span>Performance marketing</span><i></i><span>SEO and brand visibility</span><i></i><span>Media and editorial coverage</span><i></i><span>Web and digital solutions</span><i></i><span>Tech</span><i></i></div></div>
+
+<section class="proof">
+  <div class="wrap">
+    <div class="figures">
+      <div class="fig"><b data-count="54" data-suffix="M+">54M+</b><span>views on a single organic reel, with no paid promotion</span></div>
+      <div class="fig"><b data-count="27.7" data-dec="1" data-suffix="M">27.7M</b><span>unique accounts reached from one post</span></div>
+      <div class="fig"><b data-count="13.9" data-dec="1" data-suffix="K+">13.9K+</b><span>followers grown organically for a fashion brand</span></div>
+      <div class="fig"><b data-count="10">10</b><span>brands built or grown across five industries</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap">
+    <p class="statement">We do not sell isolated services. We look at the bigger problem, build the strategy, create the solution and help the brand reach its goal.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>Eight services, one growth system.</h2>
+      <p>Brand, content, performance, media and technology, planned together so every piece pushes in the same direction.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal" style="--r:0"><h3>Brand marketing</h3><p>Positioning, identity and messaging that make a business easy to recognise and remember.</p></article>
+      <article class="card reveal" style="--r:1"><h3>Digital and social media marketing</h3><p>Planning, publishing and managing your presence on the platforms your audience uses.</p></article>
+      <article class="card reveal" style="--r:2"><h3>Content marketing</h3><p>Video, written and social content built around what your audience wants to know.</p></article>
+      <article class="card reveal" style="--r:3"><h3>Performance marketing</h3><p>Paid campaigns set up and tracked against clear targets.</p></article>
+      <article class="card reveal" style="--r:0"><h3>SEO and brand visibility</h3><p>Helping the right people find you in search and beyond.</p></article>
+      <article class="card reveal" style="--r:1"><h3>Media and editorial coverage</h3><p>Features, founder stories and original content that put people and brands in front of an audience.</p></article>
+      <article class="card reveal" style="--r:2"><h3>Web and digital solutions</h3><p>Websites and digital products designed to turn visitors into customers.</p></article>
+      <article class="card reveal" style="--r:3"><h3>Tech</h3><p>Tools and systems, including AI, that support how a business grows.</p></article>
+    </div>
+    <p style="margin-top:2rem"><a class="text-link" href="services.html">See the full services</a></p>
+  </div>
+</section>
+
+<section class="section" id="ecosystem">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>More than an agency.</h2>
+      <p>Our long term vision is an ecosystem that helps businesses understand what they need to grow, and find the right professionals to help them do it.</p>
+    </div>
+    <div class="eco">
+      <div class="orbit" role="group" aria-label="The Bloova ecosystem">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <circle cx="50" cy="50" r="49"/><circle class="o2" cx="50" cy="50" r="41"/><circle cx="50" cy="50" r="28"/><circle class="o2" cx="50" cy="50" r="17"/>
+        </svg>
+        <div class="core"><img src="favicon.png" alt="Bloova" width="120" height="120" style="border-radius:50%"></div>
+        <button class="node" type="button" aria-pressed="true" style="--x:50.00%;--y:9.00%" data-name="Bloova Studio" data-text="The creative and marketing arm of Bloova. Brand identity, campaigns and marketing built around a clear strategy." data-tag="">Studio</button>
+        <button class="node" type="button" aria-pressed="false" style="--x:85.51%;--y:29.50%" data-name="Bloova Media" data-text="Our media brand. We document the people, ideas and moments shaping culture through editorial features, founder stories and original content." data-tag="">Media</button>
+        <button class="node" type="button" aria-pressed="false" style="--x:85.51%;--y:70.50%" data-name="Bloova Digital" data-text="Websites, search visibility and digital tools that help a business be found and chosen online." data-tag="">Digital</button>
+        <button class="node" type="button" aria-pressed="false" style="--x:50.00%;--y:91.00%" data-name="Bloova Experiences" data-text="Events, brand activations and collaborations that bring audiences and brands together in person." data-tag="">Experiences</button>
+        <button class="node" type="button" aria-pressed="false" style="--x:14.49%;--y:70.50%" data-name="Bloova Growth" data-text="Where businesses learn what is holding them back. Marketing audits, insights and personalised growth plans, supported by our audit tool and by experienced professionals." data-tag="Audit tool coming soon">Growth</button>
+        <button class="node" type="button" aria-pressed="false" style="--x:14.49%;--y:29.50%" data-name="Bloova Marketplace" data-text="A longer term plan. A platform where businesses can find verified creatives and digital professionals who fit what they actually need." data-tag="Long term plan">Marketplace</button>
+        
+      </div>
+      <div class="eco-detail" id="eco-detail" aria-live="polite">
+        <h3 id="eco-name">Bloova Studio</h3>
+        <p id="eco-text">The creative and marketing arm of Bloova. Brand identity, campaigns and marketing built around a clear strategy.</p>
+        <span class="tag" id="eco-tag"></span>
+        <a class="text-link" href="ecosystem.html">Explore the ecosystem</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>How we work.</h2>
+      <p>The same five steps, shaped around what each business needs.</p>
+    </div>
+    <ol class="flow">
+      <li class="reveal" style="--r:0"><h3>Understand the business</h3><p>We learn what you sell, who you sell to and what is holding growth back.</p></li>
+      <li class="reveal" style="--r:1"><h3>Develop the strategy</h3><p>We turn what we learn into a clear plan with priorities and goals.</p></li>
+      <li class="reveal" style="--r:2"><h3>Create the right solutions</h3><p>Brand, content, campaigns and digital work, built to fit the plan.</p></li>
+      <li class="reveal" style="--r:3"><h3>Reach the right audience</h3><p>We put the work in front of the people most likely to care, on the channels they use.</p></li>
+      <li class="reveal" style="--r:4"><h3>Measure growth</h3><p>We track results against the goals we set and adjust as we learn.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>Work that performs.</h2>
+      <p>Real campaigns, real numbers, and no ad spend behind the biggest one.</p>
+    </div>
+    <div class="feature reveal">
+      <div class="big">54M+<small>views on one organic reel, reaching 27.7 million unique accounts</small></div>
+      <div>
+        <h3>A relatable skit, no ad spend, tens of millions reached.</h3>
+        <p>Written, shot and edited in house, one workplace skit brought nearly 11,000 new followers from a single post. The right strategy beat ad spend.</p>
+        <ul class="facts">
+          <li><b>2.5M</b><span>likes</span></li>
+          <li><b>27.7M</b><span>accounts reached</span></li>
+          <li><b>10.9K</b><span>new follows</span></li>
+        </ul>
+        <div class="cta-actions">
+          <a class="btn btn-solid" href="work.html">See all work</a>
+          <a class="btn btn-line" href="https://www.instagram.com/reel/DNf0ZUYi1Di/" target="_blank" rel="noopener">Watch the reel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker big rev" aria-hidden="true"><div class="ticker-track"><span>Investourism</span><i></i><span>TechWaveDaily</span><i></i><span>FloxyLuxe and Euphoria</span><i></i><span>ServLoope</span><i></i><span>The Lash Allure and Glam Allure</span><i></i><span>Place à Être</span><i></i><span>Adozillion Homes and Realty</span><i></i><span>Nasimo Contractors</span><i></i><span>Landers Properties</span><i></i><span>Institute Universitaire Courage</span><i></i><span>Investourism</span><i></i><span>TechWaveDaily</span><i></i><span>FloxyLuxe and Euphoria</span><i></i><span>ServLoope</span><i></i><span>The Lash Allure and Glam Allure</span><i></i><span>Place à Être</span><i></i><span>Adozillion Homes and Realty</span><i></i><span>Nasimo Contractors</span><i></i><span>Landers Properties</span><i></i><span>Institute Universitaire Courage</span><i></i></div></div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>Who we work with.</h2>
+      <p>Our ideal client is a founder or business with something worth building, that needs stronger strategy, creativity, visibility and execution to grow.</p>
+    </div>
+    <ul class="pills">
+      <li>Startups and early stage businesses</li>
+      <li>Small and medium sized businesses</li>
+      <li>Growing and established brands</li>
+      <li>Founders and CEOs</li>
+      <li>Creators and personal brands</li>
+      <li>Nigerian and African businesses entering new markets</li>
+      <li>International businesses reaching African audiences</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-title"><h2>What clients say.</h2></div>
+    <div class="voices">
+      <figure class="voice reveal" style="--r:0">
+        <blockquote>Consistently delivered content that went beyond expectations. The ability to understand our brand and turn it into engaging, high performing content made a real difference to our growth.</blockquote>
+        <figcaption><strong>David Ose</strong>Director, Landers Properties Development Ltd</figcaption>
+      </figure>
+      <figure class="voice reveal" style="--r:1">
+        <blockquote>Working with Bloova has been exceptional. They bring both creative vision and strategic thinking to everything they touch, and their bilingual fluency is a genuine asset.</blockquote>
+        <figcaption><strong>Daniel Madu</strong>Manager, Place à Être</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="mega">
+  <svg class="rings" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+    <circle class="ring" style="--i:0" cx="200" cy="200" r="60" pathLength="1"/>
+    <circle class="ring" style="--i:1" cx="200" cy="200" r="110" pathLength="1"/>
+    <circle class="ring" style="--i:2" cx="200" cy="200" r="160" pathLength="1"/>
+    <circle class="ring" style="--i:3" cx="200" cy="200" r="198" pathLength="1"/>
+    <circle class="dot" cx="200" cy="200" r="5"/>
+  </svg>
+  <div class="wrap">
+    <h2>Let us build what grows.</h2>
+    <p>Tell us about your business. The team will reply with where we would start.</p>
+    <div class="cta-actions">
+      <a class="btn btn-solid" href="contact.html">Start a project</a>
+      <a class="btn btn-line" href="https://wa.me/2348161711413" target="_blank" rel="noopener">Message us on WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="bloova-logo.png" alt="Bloova" width="140" height="40">
+        <p>A creative growth studio and media brand, based in Lagos, Nigeria.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="work.html">Work</a>
+        <a href="team.html">Core team</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hellobloova@gmail.com">hellobloova@gmail.com</a>
+        <a href="https://wa.me/2348161711413" target="_blank" rel="noopener">+234 816 171 1413</a>
+        <p>Lagos, Nigeria</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com/bloova.ng" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@bloova.ng" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://x.com/bloovastudio" target="_blank" rel="noopener">X</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>&copy; <span data-year>2026</span> Bloova. All rights reserved.</span>
+      <span>Creative growth studio and media brand</span>
+    </div>
   </div>
 </footer>
-<script src="app.js"></script>
+<a class="wa" href="https://wa.me/2348161711413" target="_blank" rel="noopener" aria-label="Chat with Bloova on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 6.9c-.16 0-.43.06-.66.31s-.86.84-.86 2.05.88 2.38 1 2.55c.13.17 1.72 2.63 4.16 3.68.58.25 1.03.4 1.39.51.58.19 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.23-.16-.48-.28s-1.44-.71-1.67-.79-.39-.12-.55.12-.63.79-.77.95-.28.18-.53.06c-.25-.13-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7s-.02-.39.11-.51c.11-.11.25-.29.37-.43.12-.14.16-.24.24-.4s.04-.3-.02-.42c-.06-.13-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.42h-.4"/></svg></a>
+<script src="script.js"></script>
+<script src="chat.js"></script>
 </body>
 </html>
